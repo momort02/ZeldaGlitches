@@ -1,0 +1,741 @@
+[
+  {
+    "id": 1,
+    "game": "botw",
+    "name": "Bomb Hover",
+    "category": "mouvement",
+    "summary": "Glitch de frame permettant de léviter en manipulant l'état de saut de Link.",
+    "difficulty": "hard",
+    "version": "1.6.0",
+    "patchStatus": "works",
+    "speedrunUse": true,
+    "tags": [
+      "mouvement",
+      "air",
+      "lévitation"
+    ],
+    "explanation": "Nécessite de placer Link dans un état d'animation spécifique (menu-overload) pour ignorer la gravité.",
+    "steps": [
+      "Activer un état de surcharge de menu (Multi-bows + Shock arrows).",
+      "Effectuer un saut de bouclier sur une bombe.",
+      "Interrompre l'animation pour rester suspendu."
+    ],
+    "warning": null,
+    "tip": null,
+    "video": null
+  },
+  {
+    "id": 2,
+    "game": "botw",
+    "name": "Stasis Launch",
+    "category": "mouvement",
+    "summary": "Propulsion par accumulation d'énergie cinétique.",
+    "difficulty": "medium",
+    "version": "1.6.0",
+    "patchStatus": "works",
+    "speedrunUse": true,
+    "tags": [
+      "stasis",
+      "vitesse",
+      "physique"
+    ],
+    "explanation": "Utilise Cinetis pour stocker des coups dans un objet. Monter dessus juste avant l'éjection.",
+    "steps": [
+      "Figer un objet avec Cinetis.",
+      "Frapper l'objet pour charger l'énergie.",
+      "Sauter sur l'objet juste avant la fin du timer."
+    ],
+    "warning": null,
+    "tip": null,
+    "video": null
+  },
+  {
+    "id": 3,
+    "game": "botw",
+    "name": "BLSS (Bow Lift Smuggling Slide)",
+    "category": "mouvement",
+    "summary": "Permet de voler à travers toute la carte à grande vitesse.",
+    "difficulty": "medium",
+    "version": "1.6.0",
+    "patchStatus": "works",
+    "speedrunUse": true,
+    "tags": [
+      "vol",
+      "vitesse",
+      "OP"
+    ],
+    "explanation": "Glitch de transport d'objet qui permet à Link de glisser dans les airs indéfiniment.",
+    "steps": [
+      "Porter un objet (bombe/caisse) et sortir l'arc simultanément.",
+      "Effectuer un saut et rengainer au moment précis.",
+      "Maintenir B et ZR tout en bougeant le joystick gauche."
+    ],
+    "warning": null,
+    "tip": null,
+    "video": "https://www.youtube.com/watch?v=YuP4ks_svhc"
+  },
+  {
+    "id": 4,
+    "game": "botw",
+    "name": "Inventory Slot Transfer (IST)",
+    "category": "inventaire",
+    "summary": "Transfère des objets entre différentes sauvegardes.",
+    "difficulty": "hard",
+    "version": "1.6.0",
+    "patchStatus": "works",
+    "speedrunUse": false,
+    "tags": [
+      "duplication",
+      "sauvegarde",
+      "arc de lumière"
+    ],
+    "explanation": "Permet de garder l'Arc de Lumière ou de dupliquer des fées en manipulant les slots d'inventaire via le Menu Overload.",
+    "steps": [
+      "Surcharger le menu avec des arcs multifèches.",
+      "Manipuler le nombre de slots d'inventaire occupés.",
+      "Charger une autre sauvegarde pour transférer les objets."
+    ],
+    "warning": null,
+    "tip": null,
+    "video": "https://www.youtube.com/watch?v=8KSIlCvy3uQ"
+  },
+  {
+    "id": 5,
+    "game": "totk",
+    "name": "Bundled Item Duplication (BID)",
+    "category": "duplication",
+    "summary": "Duplication massive de ressources (toutes versions).",
+    "difficulty": "medium",
+    "version": "all",
+    "patchStatus": "works",
+    "speedrunUse": false,
+    "tags": [
+      "matériaux",
+      "diamants",
+      "ressources"
+    ],
+    "explanation": "Exploite le 'Fuse Entanglement' et le déchargement de zone pour dupliquer des objets par paquets.",
+    "steps": [
+      "Se rendre dans une zone spécifique (Abîmes ou grottes).",
+      "Réaliser un Fuse Entanglement (Amalgame décalé).",
+      "Décharger les objets pour les multiplier au sol."
+    ],
+    "warning": null,
+    "tip": null,
+    "video": "https://www.youtube.com/watch?v=gCTsP45nqB4"
+  },
+  {
+    "id": 6,
+    "game": "totk",
+    "name": "Fuse Entanglement (Pocket Rocket)",
+    "category": "mouvement",
+    "summary": "Sépare l'effet d'un objet de son apparence visuelle.",
+    "difficulty": "medium",
+    "version": "1.2.0",
+    "patchStatus": "patched",
+    "speedrunUse": true,
+    "tags": [
+      "amalgame",
+      "fusée",
+      "vitesse"
+    ],
+    "explanation": "Permet d'avoir une fusée 'invisible' sur son bouclier utilisable à l'infini ou de dupliquer des armes.",
+    "steps": [],
+    "warning": null,
+    "tip": null,
+    "video": "https://www.youtube.com/watch?v=QF3B9IjMsdE"
+  },
+  {
+    "id": 7,
+    "game": "botw",
+    "name": "Wind Bomb",
+    "category": "mouvement",
+    "summary": "Propulsion extrême via la combinaison parapente + explosion de bombe.",
+    "difficulty": "hard",
+    "version": "1.0.0",
+    "patchStatus": "works",
+    "speedrunUse": true,
+    "tags": [
+      "mouvement",
+      "bombes",
+      "parapente",
+      "vitesse"
+    ],
+    "explanation": "En sautant d'une surface, déployant le parapente puis faisant exploser une bombe directement sous soi au bon timing, la hitbox du parapente et celle de la bombe interagissent pour multiplier la propulsion de 3 à 5×.",
+    "steps": [
+      "Sauter d'une falaise.",
+      "Déployer immédiatement le parapente.",
+      "Poser une bombe ronde via la rune.",
+      "Plonger légèrement pour aligner la bombe sous le parapente.",
+      "Faire exploser."
+    ],
+    "warning": "Timing à la frame près. Très difficile sans pratique.",
+    "tip": "Technique de haut niveau utilisée en TAS et par les meilleurs speedrunners BotW.",
+    "video": "https://www.youtube.com/watch?v=tI6ZdbvKcG8"
+  },
+  {
+    "id": 8,
+    "game": "botw",
+    "name": "Blood Moon Dupe",
+    "category": "duplication",
+    "summary": "Dupliquer des objets rares au moment exact du déclenchement de la Lune de Sang.",
+    "difficulty": "medium",
+    "version": "1.0.0",
+    "patchStatus": "patched",
+    "speedrunUse": false,
+    "tags": [
+      "duplication",
+      "lune de sang",
+      "inventaire"
+    ],
+    "explanation": "En déposant un objet précieux juste avant le déclenchement de la cinématique Lune de Sang, puis en le ramassant pendant ou après, l'objet peut être dupliqué dans certaines versions.",
+    "steps": [
+      "Surveiller la jauge de Lune de Sang.",
+      "Juste avant le déclenchement, déposer l'objet.",
+      "Laisser la cinématique commencer.",
+      "Pendant ou juste après, ramasser l'objet."
+    ],
+    "warning": "Patché dans plusieurs versions. Vérifier sa version.",
+    "tip": "Utilisé pour dupliquer des Dragon Shards en versions non patchées.",
+    "video": null
+  },
+  {
+    "id": 9,
+    "game": "botw",
+    "name": "Arrow Duplication",
+    "category": "duplication",
+    "summary": "Dupliquer ses flèches via un changement rapide de type en bullet time.",
+    "difficulty": "easy",
+    "version": "1.0.0",
+    "patchStatus": "patched",
+    "speedrunUse": true,
+    "tags": [
+      "duplication",
+      "flèches",
+      "armes"
+    ],
+    "explanation": "En changeant rapidement le type de flèches équipé dans le menu pendant le bullet time, certaines versions ne déduisent pas correctement les flèches utilisées, créant des copies.",
+    "steps": [
+      "Avoir au moins deux types de flèches.",
+      "Déclencher le bullet time (arc en l'air).",
+      "Ouvrir le menu rapide et changer de type très rapidement.",
+      "Revenir au type initial : les flèches ne sont pas consommées."
+    ],
+    "warning": "Patché dans les versions récentes.",
+    "tip": "Permettait des combats de boss quasi-infinis avec flèches de lumière.",
+    "video": null
+  },
+  {
+    "id": 10,
+    "game": "botw",
+    "name": "Guardian Shield Parry Launch",
+    "category": "mouvement",
+    "summary": "Le Perfect Parry d'un rayon de Gardien propulse Link à des distances énormes.",
+    "difficulty": "medium",
+    "version": "1.0.0",
+    "patchStatus": "works",
+    "speedrunUse": true,
+    "tags": [
+      "bouclier",
+      "gardien",
+      "mouvement",
+      "parry"
+    ],
+    "explanation": "Un Perfect Parry du rayon de Gardien retourne le projectile MAIS applique aussi une force de réaction à Link selon l'angle du bouclier. En inclinant correctement, Link est propulsé très loin horizontalement ou verticalement.",
+    "steps": [
+      "Repérer un Gardien actif.",
+      "Équiper un bouclier résistant.",
+      "Se positionner face au rayon.",
+      "Perfect Parry (ZL juste à l'impact).",
+      "Orienter le bouclier selon la direction souhaitée."
+    ],
+    "warning": null,
+    "tip": "Le rayon de Gardien donne la propulsion la plus longue dans BotW. Massivement utilisé en TAS.",
+    "video": null
+  },
+  {
+    "id": 11,
+    "game": "totk",
+    "name": "Recall Clip",
+    "category": "mouvement",
+    "summary": "Traverser des surfaces solides en utilisant la force de rappel d'un objet.",
+    "difficulty": "medium",
+    "version": "1.0.0",
+    "patchStatus": "works",
+    "speedrunUse": true,
+    "tags": [
+      "mouvement",
+      "recall",
+      "clip",
+      "OOB"
+    ],
+    "explanation": "En utilisant Rétrospective (Recall) sur un objet qui a été déplacé à travers Link ou contre un mur, le moteur physique peut pousser Link à travers la géométrie pour résoudre le conflit de collision.",
+    "steps": [
+      "Placer un objet (ex: une planche ou un rocher) contre un mur.",
+      "Utiliser Emprise pour le déplacer légèrement vers soi puis le remettre en place.",
+      "Se coller entre l'objet et le mur.",
+      "Activer Rétrospective sur l'objet.",
+      "L'objet, en reprenant sa place, pousse Link à travers le mur."
+    ],
+    "warning": "Peut causer une chute dans le vide si utilisé sur des murs extérieurs de la carte.",
+    "tip": "Indispensable pour sauter de grandes sections de sanctuaires ou accéder à des salles verrouillées.",
+    "video": "https://www.youtube.com/watch?v=n_XK6NqmUxU"
+  },
+  {
+    "id": 12,
+    "game": "totk",
+    "name": "Fuse Entanglement",
+    "category": "duplication",
+    "summary": "Lier visuellement un objet à un bouclier sans qu'il soit réellement consommé.",
+    "difficulty": "hard",
+    "version": "1.1.2",
+    "patchStatus": "patched",
+    "speedrunUse": true,
+    "tags": [
+      "duplication",
+      "fuse",
+      "glitch",
+      "inventaire"
+    ],
+    "explanation": "Ce glitch permet de créer un état 'entrelacé' où le jeu pense qu'un objet est fusionné à un bouclier alors qu'il est toujours au sol. C'est la base de la duplication d'objets et d'armes puissantes.",
+    "steps": [
+      "Poser l'objet à fusionner au sol.",
+      "Maintenir L pour ouvrir la roue des pouvoirs et sélectionner Fusion.",
+      "Relâcher L et appuyer sur ZL (bouclier) avec un timing quasi simultané (frame-perfect).",
+      "Si réussi, l'objet est sur le bouclier mais reste aussi visible au sol.",
+      "Ouvrir l'inventaire et jeter le bouclier immédiatement."
+    ],
+    "warning": "Très dépendant de la version du jeu. La plupart des méthodes ont été corrigées en 1.2.0.",
+    "tip": "Utilisé pour créer des 'Rocket Pockets' (propulsion infinie) ou dupliquer des matériaux rares.",
+    "video": "https://www.youtube.com/watch?v=QF3B9IjMsdE"
+  },
+  {
+    "id": 13,
+    "game": "totk",
+    "name": "Ascend Clip",
+    "category": "mouvement",
+    "summary": "Traverser un plafond fin avec Ascension pour émerger hors des limites normales.",
+    "difficulty": "easy",
+    "version": "1.0.0",
+    "patchStatus": "works",
+    "speedrunUse": true,
+    "tags": [
+      "ascension",
+      "clip",
+      "OOB"
+    ],
+    "explanation": "Ascension permet de traverser vers le haut toute surface fine. En se plaçant sous une surface mince adjacente à une zone fermée ou une paroi de collision incomplète, Link peut émerger en dehors de la carte (Out of Bounds).",
+    "steps": [
+      "Repérer une surface fine (plafond de grotte, bord de falaise, racine).",
+      "Se positionner directement dessous.",
+      "Activer Ascension.",
+      "Vérifier l'aperçu de sortie : si Link semble pouvoir passer à travers une paroi non prévue, valider l'émergence."
+    ],
+    "warning": "Peut bloquer Link dans le décor si la zone de sortie n'est pas stable.",
+    "tip": "L'un des glitchs les plus faciles à utiliser pour explorer les dessous d'Hyrule.",
+    "video": null
+  },
+  {
+    "id": 14,
+    "game": "totk",
+    "name": "Fuse Duplication (Throw Dupe)",
+    "category": "duplication",
+    "summary": "Dupliquer des matériaux en les lançant avec un timing de pause précis.",
+    "difficulty": "medium",
+    "version": "1.0.0",
+    "patchStatus": "version_specific",
+    "speedrunUse": true,
+    "tags": [
+      "fusion",
+      "duplication",
+      "matériaux"
+    ],
+    "explanation": "En tentant de lancer un objet fusionné (ou un matériau via l'arc) et en ouvrant l'inventaire au moment précis où l'objet quitte la main de Link, le jeu peut 'oublier' de le soustraire de l'inventaire tout en créant l'entité physique au sol.",
+    "steps": [
+      "Dégainer l'arc ou préparer le lancer d'une arme fusionnée.",
+      "Maintenir la touche de lancer.",
+      "Appuyer sur (+) pour ouvrir l'inventaire au moment du lâcher.",
+      "Lâcher/Échanger l'objet dans le menu.",
+      "Quitter le menu : l'objet est au sol et toujours dans l'inventaire."
+    ],
+    "warning": "Nécessite souvent une version antérieure à la 1.1.2 pour les méthodes les plus simples.",
+    "tip": "Idéal pour multiplier les diamants ou les fleurs bombes rapidement.",
+    "video": null
+  },
+  {
+    "id": 15,
+    "game": "totk",
+    "name": "Infinite Jump via Zonai Fans",
+    "category": "mouvement",
+    "summary": "Altitude infinie grâce à une boucle de propulsion avec des ventilateurs Zonai.",
+    "difficulty": "medium",
+    "version": "1.0.0",
+    "patchStatus": "works",
+    "speedrunUse": true,
+    "tags": [
+      "saut",
+      "zonai",
+      "mouvement",
+      "rétrospective"
+    ],
+    "explanation": "En utilisant deux ventilateurs orientés vers le bas, Link peut créer un courant ascendant permanent. En alternant Rétrospective (Recall) sur l'un pendant que l'autre propulse, on maintient une montée constante.",
+    "steps": [
+      "Assembler deux ventilateurs face vers le bas avec Ultrahand.",
+      "Activer l'assemblage et sauter dans le courant.",
+      "Une fois à bout de batterie ou de hauteur, utiliser Rétrospective sur l'assemblage.",
+      "L'assemblage remonte, permettant à Link de reprendre de la hauteur sans toucher le sol.",
+      "Répéter la boucle."
+    ],
+    "warning": "Consomme beaucoup d'énergie Zonai au début du jeu.",
+    "tip": "Permet d'atteindre les Îles Célestes les plus hautes sans utiliser de tour de reconnaissance.",
+    "video": null
+  },
+  {
+    "id": 16,
+    "game": "totk",
+    "name": "Rewind Rock Skip",
+    "category": "puzzle",
+    "summary": "Résoudre des puzzles de temple à l'envers en rejouant la trajectoire d'un objet.",
+    "difficulty": "easy",
+    "version": "1.0.0",
+    "patchStatus": "works",
+    "speedrunUse": true,
+    "tags": [
+      "rétrospective",
+      "puzzle",
+      "skip",
+      "temple"
+    ],
+    "explanation": "Le pouvoir Rétrospective garde en mémoire 15 secondes de mouvement. En déplaçant manuellement un objet (comme une plateforme ou un poids) avec Ultrahand puis en montant dessus et en activant Rétrospective, on peut atteindre des zones normalement verrouillées.",
+    "steps": [
+      "Prendre un objet mobile avec Ultrahand.",
+      "Le déplacer vers la destination voulue, puis le ramener à ses pieds.",
+      "Monter sur l'objet.",
+      "Activer Rétrospective : l'objet refait le trajet inverse, transportant Link au-dessus des obstacles."
+    ],
+    "warning": null,
+    "tip": "Technique universelle qui rend 80% des puzzles de sanctuaires optionnels.",
+    "video": null
+  },
+  {
+    "id": 17,
+    "game": "totk",
+    "name": "Gloom Hands Skip",
+    "category": "combat",
+    "summary": "Éviter les Mains Funestes en exploitant leur zone de détection verticale.",
+    "difficulty": "easy",
+    "version": "1.0.0",
+    "patchStatus": "works",
+    "speedrunUse": true,
+    "tags": [
+      "ennemi",
+      "skip",
+      "ascension",
+      "gloom hands"
+    ],
+    "explanation": "Les Mains Funestes perdent l'agrès si Link n'est plus à leur niveau horizontal. En utilisant Ascension pour se percher sur un rebord ou en grimpant une paroi, elles finissent par s'autodétruire après quelques secondes.",
+    "steps": [
+      "Déclencher l'apparition des Mains Funestes (le ciel devient rouge).",
+      "Se diriger immédiatement vers une paroi ou un plafond.",
+      "Utiliser Ascension ou grimper hors de portée de leurs mains.",
+      "Attendre en hauteur : elles disparaîtront, laissant parfois des touffes de ténèbres."
+    ],
+    "warning": "Ne fonctionne pas si le plafond est trop bas.",
+    "tip": "Moyen le plus sûr d'explorer les Profondeurs sans risquer ses cœurs max.",
+    "video": null
+  },
+  {
+    "id": 18,
+    "game": "totk",
+    "name": "Portable Pot Dupe",
+    "category": "duplication",
+    "summary": "Dupliquer des matériaux de cuisine via la marmite Zonai et le menu de pause.",
+    "difficulty": "easy",
+    "version": "1.1.1",
+    "patchStatus": "patched",
+    "speedrunUse": false,
+    "tags": [
+      "duplication",
+      "cuisine",
+      "zonai",
+      "sauvegarde"
+    ],
+    "explanation": "En tentant de cuisiner un objet tout en effectuant une manipulation de tri d'inventaire rapide, le jeu dépose l'objet dans la marmite sans le supprimer du sac de Link.",
+    "steps": [
+      "Sortir une marmite portable Zonai.",
+      "Prendre en main les objets à dupliquer (jusqu'à 5).",
+      "S'approcher de la marmite.",
+      "Appuyer sur (B) et (+) presque simultanément pour annuler l'action tout en ouvrant le menu.",
+      "Si le timing est bon, les objets tombent dans la marmite mais restent en inventaire."
+    ],
+    "warning": "Corrigé depuis la version 1.1.2. Nécessite de désactiver les mises à jour auto.",
+    "tip": "Le glitch le plus populaire au lancement de TotK pour obtenir de l'argent infini.",
+    "video": null
+  },
+  {
+    "id": 19,
+    "game": "totk",
+    "name": "Sky Island Sequence Break",
+    "category": "exploration",
+    "summary": "Accéder aux zones avancées des Îles Célestes avant d'avoir toutes les runes.",
+    "difficulty": "medium",
+    "version": "1.0.0",
+    "patchStatus": "works",
+    "speedrunUse": true,
+    "tags": [
+      "séquence",
+      "îles célestes",
+      "skip",
+      "exploration"
+    ],
+    "explanation": "Il est possible de quitter l'île du Prélude sans avoir complété les quatre sanctuaires en utilisant des planeurs Zonai et une gestion précise de l'endurance, ou en 'clippant' à travers la porte du Temple du Temps.",
+    "steps": [
+      "Se placer sur un rail de lancement de planeur.",
+      "Utiliser Rétrospective pour maintenir le planeur en l'air pendant qu'on monte dessus.",
+      "Sauter et planer vers les îles lointaines ou la surface.",
+      "Utiliser de la nourriture d'endurance pour tenir la distance."
+    ],
+    "warning": "Peut casser certains scripts de quêtes principales si fait trop tôt.",
+    "tip": "Utilisé en Any% pour finir le jeu en un temps record.",
+    "video": null
+  },
+  {
+    "id": 20,
+    "game": "totk",
+    "name": "Construct Factory Farm",
+    "category": "farming",
+    "summary": "Farmer en boucle les matériaux Zonai grâce au respawn rapide des Construits.",
+    "difficulty": "easy",
+    "version": "1.0.0",
+    "patchStatus": "works",
+    "speedrunUse": false,
+    "tags": [
+      "farming",
+      "zonai",
+      "construits",
+      "matériaux"
+    ],
+    "explanation": "Les Construits dans les usines de production (Profondeurs) réapparaissent plus vite que les ennemis classiques. En utilisant un point de téléportation et en changeant d'étage (Surface/Profondeurs), on force le reset de la zone.",
+    "steps": [
+      "Éliminer les Construits d'une zone (ex: Usine de Jambe gauche).",
+      "Ramasser les Orbes d'énergie et les matériaux.",
+      "Se téléporter à la surface, puis revenir immédiatement via une racine.",
+      "Les Construits sont de nouveau là."
+    ],
+    "warning": "Consomme de la durabilité d'arme. Préférer l'usage de fleurs bombes.",
+    "tip": "Idéal pour améliorer rapidement la batterie de Link.",
+    "video": null
+  },
+  {
+    "id": 21,
+    "game": "both",
+    "name": "Bullet Time Extension",
+    "category": "combat",
+    "summary": "Enchaîner plusieurs ralentis d'arc en sautant sur des surfaces inclinées.",
+    "difficulty": "easy",
+    "version": "1.0.0",
+    "patchStatus": "works",
+    "speedrunUse": false,
+    "tags": [
+      "arc",
+      "ralenti",
+      "mouvement",
+      "combat"
+    ],
+    "explanation": "Le 'Bullet Time' se déclenche dès que Link est en l'air. En sautant d'une petite pente (même 30cm), on peut déclencher le ralenti. En atterrissant et en ressautant immédiatement, on peut maintenir un ennemi sous un déluge de flèches.",
+    "steps": [
+      "Trouver un petit rocher ou une pente.",
+      "Sauter et appuyer sur (ZR) pour viser.",
+      "Tirer une flèche, relâcher (ZR) juste avant de toucher le sol.",
+      "Sauter de nouveau immédiatement pour relancer le processus."
+    ],
+    "warning": "Consomme énormément d'endurance.",
+    "tip": "Le bouclier-fusée (TotK) ou le saut de bombe (BotW) sont les meilleurs déclencheurs.",
+    "video": null
+  },
+  {
+    "id": 22,
+    "game": "both",
+    "name": "Save Warp",
+    "category": "exploration",
+    "summary": "Sauvegarde manuelle pour réinitialiser la position de Link ou des objets.",
+    "difficulty": "easy",
+    "version": "1.0.0",
+    "patchStatus": "works",
+    "speedrunUse": true,
+    "tags": [
+      "sauvegarde",
+      "téléportation",
+      "speedrun"
+    ],
+    "explanation": "Le chargement d'une sauvegarde replace Link sur le 'sol valide' le plus proche. Si Link est en train de tomber ou est coincé dans une paroi, charger une sauvegarde le téléporte en sécurité sur la terre ferme la plus proche.",
+    "steps": [
+      "Se placer dans une situation périlleuse ou OOB (Out of Bounds).",
+      "Sauvegarder manuellement.",
+      "Charger immédiatement la sauvegarde.",
+      "Link apparaît au dernier point de contrôle stable calculé par le jeu."
+    ],
+    "warning": null,
+    "tip": "Permet de sortir de n'importe quel clip raté sans mourir.",
+    "video": null
+  },
+  {
+    "id": 23,
+    "game": "both",
+    "name": "Shield Parry Launch",
+    "category": "mouvement",
+    "summary": "Utiliser la force de recul d'un Perfect Parry pour se propulser.",
+    "difficulty": "medium",
+    "version": "1.0.0",
+    "patchStatus": "works",
+    "speedrunUse": true,
+    "tags": [
+      "bouclier",
+      "parry",
+      "mouvement",
+      "combat"
+    ],
+    "explanation": "Effectuer une garde parfaite (Perfect Parry) sur une explosion (bombe de Link) ou une attaque lourde annule les dégâts mais conserve une partie de l'inertie si Link est en l'air. Cela permet des micro-propulsions très utiles en combat.",
+    "steps": [
+      "Poser une bombe au sol (BotW) ou un fruit explosif (TotK).",
+      "Sauter en arrière.",
+      "Déclencher l'explosion et faire une parade (A) exactement en même temps.",
+      "Le recul projette Link vers l'arrière sans blessure."
+    ],
+    "warning": "Le timing est très serré (1 à 2 frames).",
+    "tip": "Permet de créer de la distance instantanément avec un Lynel ou un Boss.",
+    "video": null
+  },
+  {
+    "id": 24,
+    "game": "totk",
+    "name": "Mid-Air Throw Glide (Sky-Walking)",
+    "category": "mouvement",
+    "summary": "Annuler l'animation de lancer pour gagner de la distance horizontale infinie.",
+    "difficulty": "medium",
+    "version": "1.0.0",
+    "patchStatus": "works",
+    "speedrunUse": true,
+    "tags": [
+      "mouvement",
+      "glisse",
+      "endurance",
+      "air"
+    ],
+    "explanation": "En préparant un lancer d'arme (R) en l'air et en changeant d'arme ou de bouclier très rapidement, Link subit une micro-poussée horizontale sans consommer d'endurance. Répété, cela permet de traverser des gouffres immenses.",
+    "steps": [
+      "Sauter d'une hauteur et sortir le parapente.",
+      "Maintenir (R) pour préparer un lancer d'arme.",
+      "Ouvrir le menu rapide des armes (D-Pad Droite) et changer d'arme.",
+      "Relâcher (R) immédiatement après le changement.",
+      "Répéter la séquence en boucle."
+    ],
+    "warning": null,
+    "tip": "Permet de traverser entre deux îles célestes très éloignées sans batterie.",
+    "video": null
+  },
+  {
+    "id": 25,
+    "game": "botw",
+    "name": "Moonjump (Infinite Jump)",
+    "category": "mouvement",
+    "summary": "Supprime la gravité pour permettre des sauts infinis.",
+    "difficulty": "hard",
+    "version": "1.6.0",
+    "patchStatus": "works",
+    "speedrunUse": false,
+    "tags": [
+      "saut",
+      "exploration",
+      "OOB"
+    ],
+    "explanation": "Conflit d'état au Relais des Alpages entre le saut d'un cheval et la fin d'un mini-jeu.",
+    "steps": [
+      "Lancer le mini-jeu de saut d'obstacles.",
+      "Apprivoiser un cheval sauvage au moment où le chrono expire.",
+      "Link restera en état de 'saut' permanent une fois au sol."
+    ],
+    "warning": null,
+    "tip": null,
+    "video": "https://www.youtube.com/watch?v=drKDhnqzcLw"
+  },
+  {
+    "id": 26,
+    "game": "totk",
+    "name": "Y-B Item Duplication (Paraglider Dupe)",
+    "category": "duplication",
+    "summary": "Dupliquer des matériaux en plein vol via un combo de touches.",
+    "difficulty": "easy",
+    "version": "1.1.1",
+    "patchStatus": "patched",
+    "speedrunUse": true,
+    "tags": [
+      "duplication",
+      "matériaux",
+      "parapente"
+    ],
+    "explanation": "En ouvrant l'inventaire en l'air et en appuyant sur (Y) et (B) simultanément sur un objet, le jeu le dépose au sol tout en le maintenant dans la main de Link au moment de la fermeture du menu.",
+    "steps": [
+      "Sauter et sortir le parapente.",
+      "Ouvrir l'inventaire (+).",
+      "Prendre en main 5 exemplaires de l'objet à dupliquer.",
+      "Appuyer sur (Y) et (B) en même temps.",
+      "Les objets tombent au sol, mais le compte en inventaire reste identique."
+    ],
+    "warning": "Corrigé en 1.1.2. C'était la méthode la plus rapide pour les Diamants.",
+    "tip": "Fonctionne mieux si Link est assez haut pour ne pas atterrir immédiatement.",
+    "video": null
+  },
+  {
+    "id": 27,
+    "game": "botw",
+    "name": "Whistle Sprinting",
+    "category": "mouvement",
+    "summary": "Courir à pleine vitesse sans consommer d'endurance.",
+    "difficulty": "easy",
+    "version": "1.6.0",
+    "patchStatus": "works",
+    "speedrunUse": true,
+    "tags": [
+      "sprint",
+      "endurance",
+      "mouvement"
+    ],
+    "explanation": "En maintenant la touche de sifflet et en spammant la touche de course, Link effectue une animation de course saccadée qui maintient sa vitesse de pointe sans vider la jauge d'endurance.",
+    "steps": [
+      "Maintenir le D-Pad Bas (Siffler).",
+      "Tapoter rapidement la touche (B) tout en orientant le stick pour courir.",
+      "Link va courir tout en sifflant de manière répétée."
+    ],
+    "warning": "Attire les ennemis proches à cause du bruit du sifflet.",
+    "tip": "Essentiel pour les débuts de partie quand la jauge d'endurance est faible.",
+    "video": null
+  },
+  {
+    "id": 28,
+    "game": "totk",
+    "name": "Weapon Smuggling",
+    "category": "combat",
+    "summary": "Garder une arme active visuellement tout en effectuant d'autres actions.",
+    "difficulty": "medium",
+    "version": "1.0.0",
+    "patchStatus": "works",
+    "speedrunUse": false,
+    "tags": [
+      "glitch",
+      "visuel",
+      "armes",
+      "ultrahand"
+    ],
+    "explanation": "En manipulant Ultrahand et le menu de sélection d'armes, on peut 'fixer' l'arme dans la main de Link, ce qui lui permet de courir ou grimper avec son épée dégainée, créant des effets de collision permanents.",
+    "steps": [
+      "Sortir une arme.",
+      "Activer Ultrahand sur un objet.",
+      "Appuyer sur le bouton de changement d'arme et de rappel d'Ultrahand avec un timing précis.",
+      "L'arme reste 'collée' à la main de Link."
+    ],
+    "warning": null,
+    "tip": "Principalement utilisé pour des captures d'écran stylées ou des tests de hitbox.",
+    "video": null
+  }
+]

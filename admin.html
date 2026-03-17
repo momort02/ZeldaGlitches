@@ -1,776 +1,345 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin — Hyrule Glitch Archive</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Source+Code+Pro:wght@400;600&family=Crimson+Pro:wght@300;400&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Source+Code+Pro:wght@400;600&family=Crimson+Pro:wght@300;400&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #050810;
-      --bg2: #090e1a;
-      --bg3: #0d1424;
-      --border: rgba(100, 180, 255, 0.12);
-      --border-glow: rgba(100, 180, 255, 0.35);
-      --blue: #5ab4ff;
-      --cyan: #00e5cc;
-      --gold: #f0c040;
-      --red: #ff5555;
-      --green: #44ffaa;
-      --orange: #ffaa44;
-      --text: #c8d8f0;
-      --dim: #6a80a0;
-      --bright: #eaf2ff;
+      --bg:#050810; --bg2:#090e1a; --bg3:#0d1424;
+      --border:rgba(100,180,255,0.12); --border-glow:rgba(100,180,255,0.35);
+      --blue:#5ab4ff; --cyan:#00e5cc; --gold:#f0c040;
+      --red:#ff5555; --green:#44ffaa; --orange:#ffaa44;
+      --text:#c8d8f0; --dim:#6a80a0; --bright:#eaf2ff;
     }
-
-    *,
-    *::before,
-    *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Crimson Pro', Georgia, serif;
-      font-size: 16px;
-      line-height: 1.6;
-    }
-
-    a {
-      color: var(--blue);
-      text-decoration: none;
-    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    body{background:var(--bg);color:var(--text);font-family:'Crimson Pro',Georgia,serif;font-size:16px;line-height:1.6;}
+    a{color:var(--blue);text-decoration:none;}
 
     /* ── HEADER ── */
-    header {
-      background: var(--bg2);
-      border-bottom: 1px solid var(--border);
-      padding: 18px 30px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .admin-title {
-      font-family: 'Cinzel', serif;
-      font-size: 1.1rem;
-      color: var(--bright);
-      letter-spacing: .08em;
-    }
-
-    .admin-title span {
-      color: var(--gold);
-    }
-
-    .header-nav {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-    }
+    header{background:var(--bg2);border-bottom:1px solid var(--border);padding:18px 30px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+    .admin-title{font-family:'Cinzel',serif;font-size:1.1rem;color:var(--bright);letter-spacing:.08em;}
+    .admin-title span{color:var(--gold);}
+    .header-nav{display:flex;gap:10px;align-items:center;}
 
     /* ── AUTH ── */
-    #authSection {
-      max-width: 400px;
-      margin: 80px auto;
-      padding: 0 20px;
-      text-align: center;
+    #authSection{max-width:400px;margin:80px auto;padding:0 20px;text-align:center;}
+    .auth-box{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:36px;}
+    .auth-box h2{font-family:'Cinzel',serif;color:var(--bright);margin-bottom:24px;font-size:1.1rem;letter-spacing:.1em;}
+    .form-row{display:flex;flex-direction:column;gap:8px;margin-bottom:16px;text-align:left;}
+    .form-row label{font-family:'Source Code Pro',monospace;font-size:.72rem;color:var(--dim);letter-spacing:.1em;text-transform:uppercase;}
+    input[type="email"],input[type="password"],input[type="text"],input[type="url"],select,textarea{
+      background:var(--bg3);border:1px solid var(--border);color:var(--bright);
+      padding:9px 12px;border-radius:6px;font-family:'Source Code Pro',monospace;
+      font-size:.83rem;outline:none;width:100%;transition:border-color .2s;
     }
-
-    .auth-box {
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 36px;
-    }
-
-    .auth-box h2 {
-      font-family: 'Cinzel', serif;
-      color: var(--bright);
-      margin-bottom: 24px;
-      font-size: 1.1rem;
-      letter-spacing: .1em;
-    }
-
-    .form-row {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      margin-bottom: 16px;
-      text-align: left;
-    }
-
-    .form-row label {
-      font-family: 'Source Code Pro', monospace;
-      font-size: .72rem;
-      color: var(--dim);
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
-
-    input[type="email"],
-    input[type="password"],
-    input[type="text"],
-    input[type="url"],
-    select,
-    textarea {
-      background: var(--bg3);
-      border: 1px solid var(--border);
-      color: var(--bright);
-      padding: 9px 12px;
-      border-radius: 6px;
-      font-family: 'Source Code Pro', monospace;
-      font-size: .83rem;
-      outline: none;
-      width: 100%;
-      transition: border-color .2s;
-    }
-
-    input:focus,
-    select:focus,
-    textarea:focus {
-      border-color: var(--blue);
-    }
-
-    textarea {
-      resize: vertical;
-      min-height: 80px;
-    }
+    input:focus,select:focus,textarea:focus{border-color:var(--blue);}
+    textarea{resize:vertical;min-height:80px;}
 
     /* ── BUTTONS ── */
-    .btn {
-      font-family: 'Cinzel', serif;
-      font-size: .75rem;
-      letter-spacing: .1em;
-      padding: 9px 20px;
-      border-radius: 6px;
-      border: 1px solid;
-      cursor: pointer;
-      transition: all .2s;
-    }
-
-    .btn-primary {
-      background: var(--blue);
-      border-color: var(--blue);
-      color: #000;
-      font-weight: 600;
-    }
-
-    .btn-primary:hover {
-      background: #7cc8ff;
-    }
-
-    .btn-danger {
-      background: transparent;
-      border-color: var(--red);
-      color: var(--red);
-    }
-
-    .btn-danger:hover {
-      background: rgba(255, 85, 85, .12);
-    }
-
-    .btn-ghost {
-      background: transparent;
-      border-color: var(--border);
-      color: var(--dim);
-    }
-
-    .btn-ghost:hover {
-      border-color: var(--blue);
-      color: var(--blue);
-    }
-
-    .btn-success {
-      background: var(--green);
-      border-color: var(--green);
-      color: #000;
-      font-weight: 600;
-    }
-
-    .btn-success:hover {
-      background: #66ffbb;
-    }
-
-    .btn-sm {
-      padding: 5px 12px;
-      font-size: .68rem;
-    }
+    .btn{font-family:'Cinzel',serif;font-size:.75rem;letter-spacing:.1em;padding:9px 20px;border-radius:6px;border:1px solid;cursor:pointer;transition:all .2s;}
+    .btn-primary{background:var(--blue);border-color:var(--blue);color:#000;font-weight:600;}
+    .btn-primary:hover{background:#7cc8ff;}
+    .btn-danger {background:transparent;border-color:var(--red);color:var(--red);}
+    .btn-danger:hover{background:rgba(255,85,85,.12);}
+    .btn-ghost  {background:transparent;border-color:var(--border);color:var(--dim);}
+    .btn-ghost:hover{border-color:var(--blue);color:var(--blue);}
+    .btn-success{background:var(--green);border-color:var(--green);color:#000;font-weight:600;}
+    .btn-success:hover{background:#66ffbb;}
+    .btn-sm{padding:5px 12px;font-size:.68rem;}
 
     /* ── LAYOUT ── */
-    #adminSection {
-      display: none;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 30px 20px 80px;
-    }
+    #adminSection{display:none;max-width:1100px;margin:0 auto;padding:30px 20px 80px;}
 
-    .toolbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 24px;
-    }
-
-    .toolbar-title {
-      font-family: 'Cinzel', serif;
-      color: var(--bright);
-      font-size: 1rem;
-      letter-spacing: .08em;
-    }
-
-    .toolbar-actions {
-      display: flex;
-      gap: 10px;
-    }
+    .toolbar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:24px;}
+    .toolbar-title{font-family:'Cinzel',serif;color:var(--bright);font-size:1rem;letter-spacing:.08em;}
+    .toolbar-actions{display:flex;gap:10px;}
 
     /* ── TABLE ── */
-    .table-wrap {
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    thead th {
-      background: var(--bg3);
-      font-family: 'Source Code Pro', monospace;
-      font-size: .68rem;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--dim);
-      padding: 12px 14px;
-      text-align: left;
-      border-bottom: 1px solid var(--border);
-    }
-
-    tbody tr {
-      border-bottom: 1px solid var(--border);
-      transition: background .15s;
-    }
-
-    tbody tr:last-child {
-      border-bottom: none;
-    }
-
-    tbody tr:hover {
-      background: var(--bg3);
-    }
-
-    tbody td {
-      padding: 11px 14px;
-      font-size: .88rem;
-      vertical-align: middle;
-    }
-
-    .td-name {
-      font-family: 'Cinzel', serif;
-      color: var(--bright);
-      font-size: .85rem;
-      max-width: 200px;
-    }
-
-    .td-actions {
-      display: flex;
-      gap: 6px;
-      justify-content: flex-end;
-    }
+    .table-wrap{background:var(--bg2);border:1px solid var(--border);border-radius:10px;overflow:hidden;}
+    table{width:100%;border-collapse:collapse;}
+    thead th{background:var(--bg3);font-family:'Source Code Pro',monospace;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);padding:12px 14px;text-align:left;border-bottom:1px solid var(--border);}
+    tbody tr{border-bottom:1px solid var(--border);transition:background .15s;}
+    tbody tr:last-child{border-bottom:none;}
+    tbody tr:hover{background:var(--bg3);}
+    tbody td{padding:11px 14px;font-size:.88rem;vertical-align:middle;}
+    .td-name{font-family:'Cinzel',serif;color:var(--bright);font-size:.85rem;max-width:200px;}
+    .td-actions{display:flex;gap:6px;justify-content:flex-end;}
 
     /* badges inline */
-    .gb {
-      font-size: .6rem;
-      padding: 2px 7px;
-      border-radius: 8px;
-      font-family: 'Source Code Pro', monospace;
-    }
-
-    .gb-botw {
-      background: rgba(90, 180, 255, .15);
-      color: var(--blue);
-      border: 1px solid rgba(90, 180, 255, .3);
-    }
-
-    .gb-totk {
-      background: rgba(0, 229, 204, .12);
-      color: var(--cyan);
-      border: 1px solid rgba(0, 229, 204, .3);
-    }
-
-    .gb-both {
-      background: rgba(240, 192, 64, .12);
-      color: var(--gold);
-      border: 1px solid rgba(240, 192, 64, .3);
-    }
-
-    .pb-works {
-      background: rgba(68, 255, 170, .08);
-      color: #55cc88;
-      border: 1px solid rgba(68, 255, 170, .2);
-    }
-
-    .pb-patched {
-      background: rgba(255, 85, 85, .08);
-      color: #cc5555;
-      border: 1px solid rgba(255, 85, 85, .2);
-    }
-
-    .pb-ver {
-      background: rgba(255, 170, 68, .08);
-      color: var(--orange);
-      border: 1px solid rgba(255, 170, 68, .2);
-    }
+    .gb{font-size:.6rem;padding:2px 7px;border-radius:8px;font-family:'Source Code Pro',monospace;}
+    .gb-botw{background:rgba(90,180,255,.15);color:var(--blue);border:1px solid rgba(90,180,255,.3);}
+    .gb-totk{background:rgba(0,229,204,.12);color:var(--cyan);border:1px solid rgba(0,229,204,.3);}
+    .gb-both{background:rgba(240,192,64,.12);color:var(--gold);border:1px solid rgba(240,192,64,.3);}
+    .pb-works  {background:rgba(68,255,170,.08);color:#55cc88;border:1px solid rgba(68,255,170,.2);}
+    .pb-patched{background:rgba(255,85,85,.08);color:#cc5555;border:1px solid rgba(255,85,85,.2);}
+    .pb-ver    {background:rgba(255,170,68,.08);color:var(--orange);border:1px solid rgba(255,170,68,.2);}
 
     /* ── MODAL FORM ── */
-    .modal-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 100;
-      background: rgba(0, 0, 0, .78);
-      backdrop-filter: blur(6px);
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-
-    .modal-overlay.open {
-      display: flex;
-    }
-
-    .modal-form {
-      background: var(--bg2);
-      border: 1px solid var(--border-glow);
-      border-radius: 14px;
-      max-width: 680px;
-      width: 100%;
-      max-height: 90vh;
-      overflow-y: auto;
-      box-shadow: 0 0 50px rgba(0, 80, 200, .2);
-      animation: modal-in .2s ease;
-    }
-
-    @keyframes modal-in {
-      from {
-        opacity: 0;
-        transform: scale(.95) translateY(12px);
-      }
-
-      to {
-        opacity: 1;
-        transform: none;
-      }
-    }
-
-    .modal-form-header {
-      padding: 22px 24px 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .modal-form-title {
-      font-family: 'Cinzel', serif;
-      font-size: 1.1rem;
-      color: var(--bright);
-    }
-
-    .modal-form-body {
-      padding: 20px 24px 26px;
-    }
-
-    .form-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-
-    .form-full {
-      grid-column: 1/-1;
-    }
-
-    .modal-close {
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--dim);
-      font-size: 1rem;
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      cursor: pointer;
-      transition: all .2s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .modal-close:hover {
-      border-color: var(--red);
-      color: var(--red);
-    }
-
-    .form-actions {
-      display: flex;
-      justify-content: flex-end;
-      gap: 10px;
-      margin-top: 22px;
-    }
+    .modal-overlay{display:none;position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.78);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:20px;}
+    .modal-overlay.open{display:flex;}
+    .modal-form{background:var(--bg2);border:1px solid var(--border-glow);border-radius:14px;max-width:680px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 0 50px rgba(0,80,200,.2);animation:modal-in .2s ease;}
+    @keyframes modal-in{from{opacity:0;transform:scale(.95) translateY(12px);}to{opacity:1;transform:none;}}
+    .modal-form-header{padding:22px 24px 0;display:flex;justify-content:space-between;align-items:center;}
+    .modal-form-title{font-family:'Cinzel',serif;font-size:1.1rem;color:var(--bright);}
+    .modal-form-body{padding:20px 24px 26px;}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+    .form-full{grid-column:1/-1;}
+    .modal-close{background:transparent;border:1px solid var(--border);color:var(--dim);font-size:1rem;width:30px;height:30px;border-radius:50%;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;}
+    .modal-close:hover{border-color:var(--red);color:var(--red);}
+    .form-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:22px;}
 
     /* ── TOAST ── */
-    #toast {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      z-index: 200;
-      background: var(--bg3);
-      border: 1px solid var(--border-glow);
-      border-radius: 8px;
-      padding: 12px 18px;
-      font-family: 'Source Code Pro', monospace;
-      font-size: .8rem;
-      color: var(--bright);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, .4);
-      opacity: 0;
-      transform: translateY(10px);
-      transition: all .25s;
-      pointer-events: none;
-    }
-
-    #toast.show {
-      opacity: 1;
-      transform: none;
-    }
-
-    #toast.ok {
-      border-color: rgba(68, 255, 170, .4);
-      color: var(--green);
-    }
-
-    #toast.err {
-      border-color: rgba(255, 85, 85, .4);
-      color: var(--red);
-    }
+    #toast{position:fixed;bottom:24px;right:24px;z-index:200;background:var(--bg3);border:1px solid var(--border-glow);border-radius:8px;padding:12px 18px;font-family:'Source Code Pro',monospace;font-size:.8rem;color:var(--bright);box-shadow:0 4px 20px rgba(0,0,0,.4);opacity:0;transform:translateY(10px);transition:all .25s;pointer-events:none;}
+    #toast.show{opacity:1;transform:none;}
+    #toast.ok  {border-color:rgba(68,255,170,.4);color:var(--green);}
+    #toast.err {border-color:rgba(255,85,85,.4);color:var(--red);}
 
     /* ── LOADING ── */
-    .spinner {
-      display: inline-block;
-      width: 18px;
-      height: 18px;
-      border: 2px solid var(--border);
-      border-top-color: var(--blue);
-      border-radius: 50%;
-      animation: spin .7s linear infinite;
-    }
-
-    @keyframes spin {
-      to {
-        transform: rotate(360deg);
-      }
-    }
+    .spinner{display:inline-block;width:18px;height:18px;border:2px solid var(--border);border-top-color:var(--blue);border-radius:50%;animation:spin .7s linear infinite;}
+    @keyframes spin{to{transform:rotate(360deg);}}
 
     /* ── IMPORT SECTION ── */
-    .import-box {
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 24px;
-      margin-bottom: 28px;
-    }
+    .import-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:24px;margin-bottom:28px;}
+    .import-box h3{font-family:'Cinzel',serif;font-size:.9rem;letter-spacing:.1em;color:var(--bright);margin-bottom:12px;}
+    .import-box p{font-size:.85rem;color:var(--dim);margin-bottom:14px;}
+    .import-actions{display:flex;gap:10px;flex-wrap:wrap;}
 
-    .import-box h3 {
-      font-family: 'Cinzel', serif;
-      font-size: .9rem;
-      letter-spacing: .1em;
-      color: var(--bright);
-      margin-bottom: 12px;
-    }
+    ::-webkit-scrollbar{width:5px;}
+    ::-webkit-scrollbar-track{background:var(--bg);}
+    ::-webkit-scrollbar-thumb{background:var(--border-glow);border-radius:3px;}
 
-    .import-box p {
-      font-size: .85rem;
-      color: var(--dim);
-      margin-bottom: 14px;
-    }
-
-    .import-actions {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    ::-webkit-scrollbar {
-      width: 5px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: var(--bg);
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: var(--border-glow);
-      border-radius: 3px;
-    }
-
-    @media(max-width:600px) {
-      .form-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .modal-form-header,
-      .modal-form-body {
-        padding-left: 16px;
-        padding-right: 16px;
-      }
-
-      thead th:nth-child(3),
-      thead th:nth-child(4),
-      tbody td:nth-child(3),
-      tbody td:nth-child(4) {
-        display: none;
-      }
+    @media(max-width:600px){
+      .form-grid{grid-template-columns:1fr;}
+      .modal-form-header,.modal-form-body{padding-left:16px;padding-right:16px;}
+      thead th:nth-child(3),thead th:nth-child(4),tbody td:nth-child(3),tbody td:nth-child(4){display:none;}
     }
   </style>
 </head>
-
 <body>
 
-  <header>
-    <div class="admin-title">◭ Hyrule Glitch Archive <span>— Admin</span></div>
-    <div class="header-nav">
-      <span id="userEmail" style="font-family:'Source Code Pro',monospace;font-size:.75rem;color:var(--dim)"></span>
-      <a href="index.html" class="btn btn-ghost btn-sm">← Site</a>
-      <button id="btnLogout" class="btn btn-ghost btn-sm" style="display:none">Déconnexion</button>
-    </div>
-  </header>
+<header>
+  <div class="admin-title">◭ Hyrule Glitch Archive <span>— Admin</span></div>
+  <div class="header-nav">
+    <span id="userEmail" style="font-family:'Source Code Pro',monospace;font-size:.75rem;color:var(--dim)"></span>
+    <a href="index.html" class="btn btn-ghost btn-sm">← Site</a>
+    <button id="btnLogout" class="btn btn-ghost btn-sm" style="display:none">Déconnexion</button>
+  </div>
+</header>
 
-  <!-- AUTH -->
-  <div id="authSection">
-    <div class="auth-box">
-      <h2>Connexion Admin</h2>
-      <div class="form-row"><label>Email</label><input type="email" id="authEmail" placeholder="admin@exemple.com">
-      </div>
-      <div class="form-row"><label>Mot de passe</label><input type="password" id="authPassword" placeholder="••••••••">
-      </div>
-      <div style="margin-top:6px;margin-bottom:18px;font-size:.8rem;color:var(--dim)">Accès réservé aux comptes
-        autorisés dans Firebase Auth.</div>
-      <button class="btn btn-primary" id="btnLogin" style="width:100%">Se connecter</button>
-      <div id="authError" style="color:var(--red);font-size:.82rem;margin-top:10px;display:none"></div>
+<!-- AUTH -->
+<div id="authSection">
+  <div class="auth-box">
+    <h2>Connexion Admin</h2>
+    <div class="form-row"><label>Email</label><input type="email" id="authEmail" placeholder="admin@exemple.com"></div>
+    <div class="form-row"><label>Mot de passe</label><input type="password" id="authPassword" placeholder="••••••••"></div>
+    <div style="margin-top:6px;margin-bottom:18px;font-size:.8rem;color:var(--dim)">Accès réservé aux comptes autorisés dans Firebase Auth.</div>
+    <button class="btn btn-primary" id="btnLogin" style="width:100%">Se connecter</button>
+    <div id="authError" style="color:var(--red);font-size:.82rem;margin-top:10px;display:none"></div>
+  </div>
+</div>
+
+<!-- ADMIN PANEL -->
+<div id="adminSection">
+
+  <!-- Table -->
+  <div class="toolbar">
+    <div class="toolbar-title">Glitchs <span id="tableCount" style="color:var(--dim);font-weight:400"></span></div>
+    <div class="toolbar-actions">
+      <button class="btn btn-primary" id="btnNew">+ Nouveau glitch</button>
     </div>
   </div>
 
-  <!-- ADMIN PANEL -->
-  <div id="adminSection">
-
-    <!-- Import JSON -->
-    <div class="import-box">
-      <h3>Import initial depuis glitches.json</h3>
-      <p>Si Firestore est vide, importez les données du fichier JSON en un clic. N'importe pas si des documents existent
-        déjà.</p>
-      <div class="import-actions">
-        <button class="btn btn-ghost" id="btnCheckCount"><span class="spinner" id="spinCheck"
-            style="display:none"></span> Vérifier Firestore</button>
-        <button class="btn btn-primary" id="btnImport" style="display:none"><span class="spinner" id="spinImport"
-            style="display:none"></span> Importer glitches.json</button>
-      </div>
-      <div id="importStatus"
-        style="margin-top:10px;font-family:'Source Code Pro',monospace;font-size:.78rem;color:var(--dim)"></div>
-    </div>
-
-    <!-- Table -->
-    <div class="toolbar">
-      <div class="toolbar-title">Glitchs <span id="tableCount" style="color:var(--dim);font-weight:400"></span></div>
-      <div class="toolbar-actions">
-        <button class="btn btn-primary" id="btnNew">+ Nouveau glitch</button>
-      </div>
-    </div>
-
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Nom</th>
-            <th>Jeu</th>
-            <th>Catégorie</th>
-            <th>Patch</th>
-            <th style="text-align:right">Actions</th>
-          </tr>
-        </thead>
-        <tbody id="tableBody">
-          <tr>
-            <td colspan="6" style="text-align:center;padding:30px;color:var(--dim)"><span class="spinner"></span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nom</th>
+          <th>Jeu</th>
+          <th>Catégorie</th>
+          <th>Patch</th>
+          <th style="text-align:right">Actions</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody">
+        <tr><td colspan="6" style="text-align:center;padding:30px;color:var(--dim)"><span class="spinner"></span></td></tr>
+      </tbody>
+    </table>
   </div>
+</div>
 
-  <!-- FORM MODAL -->
-  <div class="modal-overlay" id="formOverlay">
-    <div class="modal-form">
-      <div class="modal-form-header">
-        <div class="modal-form-title" id="formTitle">Nouveau glitch</div>
-        <button class="modal-close" id="formClose">✕</button>
-      </div>
-      <div class="modal-form-body">
-        <input type="hidden" id="fDocId">
-        <div class="form-grid">
-          <div class="form-row form-full"><label>Nom *</label><input type="text" id="fName" placeholder="Bomb Hover">
-          </div>
-          <div class="form-row"><label>Jeu *</label>
-            <select id="fGame">
-              <option value="botw">BotW</option>
-              <option value="totk">TotK</option>
-              <option value="both">Les deux</option>
-            </select>
-          </div>
-          <div class="form-row"><label>Catégorie *</label><input type="text" id="fCategory" placeholder="mouvement">
-          </div>
-          <div class="form-row"><label>Difficulté *</label>
-            <select id="fDifficulty">
-              <option value="easy">Facile</option>
-              <option value="medium">Moyen</option>
-              <option value="hard">Difficile</option>
-            </select>
-          </div>
-          <div class="form-row"><label>Version</label><input type="text" id="fVersion" placeholder="1.6.0"></div>
-          <div class="form-row"><label>Statut patch *</label>
-            <select id="fPatchStatus">
-              <option value="works">✓ Actif</option>
-              <option value="patched">✗ Patché</option>
-              <option value="version_specific">~ Selon version</option>
-            </select>
-          </div>
-          <div class="form-row form-full" style="flex-direction:row;align-items:center;gap:10px">
-            <input type="checkbox" id="fSpeedrun" style="width:auto;accent-color:var(--orange)">
-            <label for="fSpeedrun"
-              style="font-family:'Source Code Pro',monospace;font-size:.75rem;color:var(--dim);text-transform:uppercase;letter-spacing:.1em;cursor:pointer">Utilisé
-              en speedrun</label>
-          </div>
-          <div class="form-row form-full"><label>Résumé *</label><input type="text" id="fSummary"
-              placeholder="Description courte du glitch"></div>
-          <div class="form-row form-full"><label>Explication</label><textarea id="fExplanation" rows="4"
-              placeholder="Explication technique détaillée…"></textarea></div>
-          <div class="form-row form-full"><label>Étapes (une par ligne)</label><textarea id="fSteps" rows="5"
-              placeholder="Étape 1&#10;Étape 2&#10;Étape 3"></textarea></div>
-          <div class="form-row form-full"><label>Tags (séparés par des virgules)</label><input type="text" id="fTags"
-              placeholder="mouvement, vitesse, bombes"></div>
-          <div class="form-row form-full"><label>Avertissement</label><input type="text" id="fWarning"
-              placeholder="Optionnel"></div>
-          <div class="form-row form-full"><label>Tip</label><input type="text" id="fTip" placeholder="Optionnel"></div>
-          <div class="form-row form-full"><label>URL vidéo YouTube</label><input type="url" id="fVideo"
-              placeholder="https://www.youtube.com/watch?v=…"></div>
+<!-- FORM MODAL -->
+<div class="modal-overlay" id="formOverlay">
+  <div class="modal-form">
+    <div class="modal-form-header">
+      <div class="modal-form-title" id="formTitle">Nouveau glitch</div>
+      <button class="modal-close" id="formClose">✕</button>
+    </div>
+    <div class="modal-form-body">
+      <input type="hidden" id="fDocId">
+      <div class="form-grid">
+        <div class="form-row form-full"><label>Nom *</label><input type="text" id="fName" placeholder="Bomb Hover"></div>
+        <div class="form-row"><label>Jeu *</label>
+          <select id="fGame">
+            <option value="botw">BotW</option>
+            <option value="totk">TotK</option>
+            <option value="both">Les deux</option>
+          </select>
         </div>
-        <div class="form-actions">
-          <button class="btn btn-ghost" id="formCancel">Annuler</button>
-          <button class="btn btn-success" id="formSave">Enregistrer</button>
+        <div class="form-row"><label>Catégorie *</label><input type="text" id="fCategory" placeholder="mouvement"></div>
+        <div class="form-row"><label>Difficulté *</label>
+          <select id="fDifficulty">
+            <option value="easy">Facile</option>
+            <option value="medium">Moyen</option>
+            <option value="hard">Difficile</option>
+          </select>
         </div>
+        <div class="form-row"><label>Version</label><input type="text" id="fVersion" placeholder="1.6.0"></div>
+        <div class="form-row"><label>Statut patch *</label>
+          <select id="fPatchStatus">
+            <option value="works">✓ Actif</option>
+            <option value="patched">✗ Patché</option>
+            <option value="version_specific">~ Selon version</option>
+          </select>
+        </div>
+        <div class="form-row form-full" style="flex-direction:row;align-items:center;gap:10px">
+          <input type="checkbox" id="fSpeedrun" style="width:auto;accent-color:var(--orange)">
+          <label for="fSpeedrun" style="font-family:'Source Code Pro',monospace;font-size:.75rem;color:var(--dim);text-transform:uppercase;letter-spacing:.1em;cursor:pointer">Utilisé en speedrun</label>
+        </div>
+        <div class="form-row form-full"><label>Résumé *</label><input type="text" id="fSummary" placeholder="Description courte du glitch"></div>
+        <div class="form-row form-full"><label>Explication</label><textarea id="fExplanation" rows="4" placeholder="Explication technique détaillée…"></textarea></div>
+        <div class="form-row form-full"><label>Étapes (une par ligne)</label><textarea id="fSteps" rows="5" placeholder="Étape 1&#10;Étape 2&#10;Étape 3"></textarea></div>
+        <div class="form-row form-full"><label>Tags (séparés par des virgules)</label><input type="text" id="fTags" placeholder="mouvement, vitesse, bombes"></div>
+        <div class="form-row form-full"><label>Avertissement</label><input type="text" id="fWarning" placeholder="Optionnel"></div>
+        <div class="form-row form-full"><label>Tip</label><input type="text" id="fTip" placeholder="Optionnel"></div>
+        <div class="form-row form-full"><label>URL vidéo YouTube</label><input type="url" id="fVideo" placeholder="https://www.youtube.com/watch?v=…"></div>
+      </div>
+      <div class="form-actions">
+        <button class="btn btn-ghost" id="formCancel">Annuler</button>
+        <button class="btn btn-success" id="formSave">Enregistrer</button>
       </div>
     </div>
   </div>
+</div>
 
-  <div id="toast"></div>
+<div id="toast"></div>
 
-  <script type="module">
-    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
-    import {
-      getFirestore, collection, getDocs,
-      addDoc, setDoc, deleteDoc,
-      doc, orderBy, query
-    } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
-    import {
-      getAuth, signInWithEmailAndPassword,
-      signOut, onAuthStateChanged
-    } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js';
+<script type="module">
+import { initializeApp }                          from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
+import { getFirestore, collection, getDocs,
+         addDoc, setDoc, deleteDoc,
+         doc, orderBy, query }                    from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
+import { getAuth, signInWithEmailAndPassword,
+         signOut, onAuthStateChanged }            from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js';
 
-    // ── CONFIG — même que script.js ──
-    const firebaseConfig = { apiKey: "AIzaSyDDhRD_Ig2Zmhu_utqPhywiXcBAK7S0gvg", authDomain: "zeldaglitches.firebaseapp.com", projectId: "zeldaglitches", storageBucket: "zeldaglitches.firebasestorage.app", messagingSenderId: "304863545616", appId: "1:304863545616:web:0dcec75a5e49c237733d95" };
+// ── CONFIG — même que script.js ──
+const firebaseConfig = {
+  apiKey:            "AIzaSyDDhRD_Ig2Zmhu_utqPhywiXcBAK7S0gvg",
+  authDomain:        "zeldaglitches.firebaseapp.com",
+  projectId:         "zeldaglitches",
+  storageBucket:     "zeldaglitches.firebasestorage.app",
+  messagingSenderId: "304863545616",
+  appId:             "1:304863545616:web:0dcec75a5e49c237733d95"
+};
 
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
-    const auth = getAuth(app);
+const app  = initializeApp(firebaseConfig);
+const db   = getFirestore(app);
+const auth = getAuth(app);
 
-    // ── TOAST ──
-    function toast(msg, type = 'ok') {
-      const el = document.getElementById('toast');
-      el.textContent = msg;
-      el.className = `show ${type}`;
-      setTimeout(() => el.className = '', 3000);
-    }
+// ── TOAST ──
+function toast(msg, type = 'ok') {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.className = `show ${type}`;
+  setTimeout(() => el.className = '', 3000);
+}
 
-    // ── AUTH ──
-    onAuthStateChanged(auth, user => {
-      if (user) {
-        document.getElementById('authSection').style.display = 'none';
-        document.getElementById('adminSection').style.display = 'block';
-        document.getElementById('btnLogout').style.display = 'inline-flex';
-        document.getElementById('userEmail').textContent = user.email;
-        loadGlitches();
-      } else {
-        document.getElementById('authSection').style.display = 'block';
-        document.getElementById('adminSection').style.display = 'none';
-        document.getElementById('btnLogout').style.display = 'none';
-        document.getElementById('userEmail').textContent = '';
-      }
-    });
+// ── ADMIN WHITELIST ──
+// Ajouter ici tous les emails autorisés à accéder au panel.
+const ADMIN_EMAILS = [
+  "amaury.goemaere@gmail.com"
+];
 
-    document.getElementById('btnLogin').addEventListener('click', async () => {
-      const email = document.getElementById('authEmail').value.trim();
-      const pass = document.getElementById('authPassword').value;
-      const errEl = document.getElementById('authError');
-      errEl.style.display = 'none';
-      try {
-        await signInWithEmailAndPassword(auth, email, pass);
-      } catch (e) {
-        errEl.textContent = e.message;
-        errEl.style.display = 'block';
-      }
-    });
+function isAdmin(user) {
+  return user && ADMIN_EMAILS.includes(user.email.toLowerCase());
+}
 
-    document.getElementById('btnLogout').addEventListener('click', () => signOut(auth));
+// ── AUTH ──
+onAuthStateChanged(auth, async user => {
+  if (user && isAdmin(user)) {
+    document.getElementById('authSection').style.display  = 'none';
+    document.getElementById('adminSection').style.display = 'block';
+    document.getElementById('btnLogout').style.display    = 'inline-flex';
+    document.getElementById('userEmail').textContent      = user.email;
+    loadGlitches();
+  } else if (user && !isAdmin(user)) {
+    // Connecté mais pas autorisé — déconnexion immédiate
+    await signOut(auth);
+    const errEl = document.getElementById('authError');
+    errEl.textContent = 'Accès refusé : ce compte n\'est pas autorisé.';
+    errEl.style.display = 'block';
+  } else {
+    document.getElementById('authSection').style.display  = 'block';
+    document.getElementById('adminSection').style.display = 'none';
+    document.getElementById('btnLogout').style.display    = 'none';
+    document.getElementById('userEmail').textContent      = '';
+  }
+});
 
-    // ── LOAD GLITCHES ──
-    let allGlitches = [];
+document.getElementById('btnLogin').addEventListener('click', async () => {
+  const email = document.getElementById('authEmail').value.trim();
+  const pass  = document.getElementById('authPassword').value;
+  const errEl = document.getElementById('authError');
+  errEl.style.display = 'none';
+  try {
+    const cred = await signInWithEmailAndPassword(auth, email, pass);
+    // isAdmin vérifié dans onAuthStateChanged — pas besoin de doublon ici
+  } catch (e) {
+    const msgs = {
+      'auth/invalid-credential':    'Email ou mot de passe incorrect.',
+      'auth/user-not-found':        'Aucun compte avec cet email.',
+      'auth/wrong-password':        'Mot de passe incorrect.',
+      'auth/too-many-requests':     'Trop de tentatives. Réessayez plus tard.',
+    };
+    errEl.textContent = msgs[e.code] || e.message;
+    errEl.style.display = 'block';
+  }
+});
 
-    async function loadGlitches() {
-      const q = query(collection(db, 'glitches'), orderBy('id'));
-      const snap = await getDocs(q);
-      allGlitches = snap.docs.map(d => ({ docId: d.id, ...d.data() }));
-      renderTable();
-    }
+document.getElementById('btnLogout').addEventListener('click', () => signOut(auth));
 
-    function patchClass(s) {
-      if (s === 'works') return 'pb-works';
-      if (s === 'patched') return 'pb-patched';
-      return 'pb-ver';
-    }
-    function patchTxt(s) {
-      if (s === 'works') return '✓ Actif';
-      if (s === 'patched') return '✗ Patché';
-      return '~ Version';
-    }
+// ── LOAD GLITCHES ──
+let allGlitches = [];
 
-    function renderTable() {
-      const tbody = document.getElementById('tableBody');
-      document.getElementById('tableCount').textContent = `(${allGlitches.length})`;
-      if (!allGlitches.length) {
-        tbody.innerHTML = `<tr><td colspan="6" style="text-align:center;padding:30px;color:var(--dim)">Aucun glitch dans Firestore.</td></tr>`;
-        return;
-      }
-      tbody.innerHTML = allGlitches.map(g => `
+async function loadGlitches() {
+  const q    = query(collection(db, 'glitches'), orderBy('id'));
+  const snap = await getDocs(q);
+  allGlitches = snap.docs.map(d => ({ docId: d.id, ...d.data() }));
+  renderTable();
+}
+
+function patchClass(s) {
+  if (s === 'works')   return 'pb-works';
+  if (s === 'patched') return 'pb-patched';
+  return 'pb-ver';
+}
+function patchTxt(s) {
+  if (s === 'works')   return '✓ Actif';
+  if (s === 'patched') return '✗ Patché';
+  return '~ Version';
+}
+
+function renderTable() {
+  const tbody = document.getElementById('tableBody');
+  document.getElementById('tableCount').textContent = `(${allGlitches.length})`;
+  if (!allGlitches.length) {
+    tbody.innerHTML = `<tr><td colspan="6" style="text-align:center;padding:30px;color:var(--dim)">Aucun glitch dans Firestore.</td></tr>`;
+    return;
+  }
+  tbody.innerHTML = allGlitches.map(g => `
     <tr>
       <td style="color:var(--dim);font-family:'Source Code Pro',monospace;font-size:.75rem">${g.id}</td>
       <td class="td-name">${g.name}</td>
@@ -780,137 +349,99 @@
       <td>
         <div class="td-actions">
           <button class="btn btn-ghost btn-sm" onclick="editGlitch('${g.docId}')">Éditer</button>
-          <button class="btn btn-danger btn-sm" onclick="deleteGlitch('${g.docId}', '${g.name.replace(/'/g, "\\'")}')">Suppr.</button>
+          <button class="btn btn-danger btn-sm" onclick="deleteGlitch('${g.docId}', '${g.name.replace(/'/g,"\\'")}')">Suppr.</button>
         </div>
       </td>
     </tr>`).join('');
+}
+
+// ── FORM MODAL ──
+const formOverlay = document.getElementById('formOverlay');
+const closeForm   = () => { formOverlay.classList.remove('open'); document.body.style.overflow = ''; };
+
+document.getElementById('formClose').addEventListener('click', closeForm);
+document.getElementById('formCancel').addEventListener('click', closeForm);
+formOverlay.addEventListener('click', e => { if (e.target === formOverlay) closeForm(); });
+
+function openForm(glitch = null) {
+  document.getElementById('formTitle').textContent = glitch ? 'Éditer le glitch' : 'Nouveau glitch';
+  document.getElementById('fDocId').value       = glitch?.docId   || '';
+  document.getElementById('fName').value         = glitch?.name    || '';
+  document.getElementById('fGame').value         = glitch?.game    || 'botw';
+  document.getElementById('fCategory').value     = glitch?.category|| '';
+  document.getElementById('fDifficulty').value   = glitch?.difficulty || 'medium';
+  document.getElementById('fVersion').value      = glitch?.version || '';
+  document.getElementById('fPatchStatus').value  = glitch?.patchStatus || 'works';
+  document.getElementById('fSpeedrun').checked   = glitch?.speedrunUse || false;
+  document.getElementById('fSummary').value      = glitch?.summary  || '';
+  document.getElementById('fExplanation').value  = glitch?.explanation || '';
+  document.getElementById('fSteps').value        = (glitch?.steps || []).join('\n');
+  document.getElementById('fTags').value         = (glitch?.tags  || []).join(', ');
+  document.getElementById('fWarning').value      = glitch?.warning || '';
+  document.getElementById('fTip').value          = glitch?.tip     || '';
+  document.getElementById('fVideo').value        = glitch?.video   || '';
+  formOverlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+document.getElementById('btnNew').addEventListener('click', () => openForm());
+
+window.editGlitch = (docId) => {
+  const g = allGlitches.find(x => x.docId === docId);
+  if (g) openForm(g);
+};
+
+window.deleteGlitch = async (docId, name) => {
+  if (!confirm(`Supprimer « ${name} » ?`)) return;
+  try {
+    await deleteDoc(doc(db, 'glitches', docId));
+    toast(`« ${name} » supprimé.`);
+    loadGlitches();
+  } catch (e) {
+    toast(e.message, 'err');
+  }
+};
+
+document.getElementById('formSave').addEventListener('click', async () => {
+  const docId = document.getElementById('fDocId').value;
+  const name  = document.getElementById('fName').value.trim();
+  if (!name) { toast('Le nom est requis.', 'err'); return; }
+
+  const data = {
+    id:           allGlitches.length + 1,
+    name,
+    game:         document.getElementById('fGame').value,
+    category:     document.getElementById('fCategory').value.trim().toLowerCase(),
+    difficulty:   document.getElementById('fDifficulty').value,
+    version:      document.getElementById('fVersion').value.trim() || null,
+    patchStatus:  document.getElementById('fPatchStatus').value,
+    speedrunUse:  document.getElementById('fSpeedrun').checked,
+    summary:      document.getElementById('fSummary').value.trim(),
+    explanation:  document.getElementById('fExplanation').value.trim() || null,
+    steps:        document.getElementById('fSteps').value.split('\n').map(s=>s.trim()).filter(Boolean),
+    tags:         document.getElementById('fTags').value.split(',').map(t=>t.trim()).filter(Boolean),
+    warning:      document.getElementById('fWarning').value.trim() || null,
+    tip:          document.getElementById('fTip').value.trim() || null,
+    video:        document.getElementById('fVideo').value.trim() || null,
+  };
+
+  try {
+    if (docId) {
+      // preserve original id
+      const orig = allGlitches.find(x => x.docId === docId);
+      data.id = orig?.id ?? data.id;
+      await setDoc(doc(db, 'glitches', docId), data);
+      toast('Glitch mis à jour !');
+    } else {
+      await addDoc(collection(db, 'glitches'), data);
+      toast('Glitch ajouté !');
     }
-
-    // ── IMPORT ──
-    document.getElementById('btnCheckCount').addEventListener('click', async () => {
-      const spin = document.getElementById('spinCheck');
-      const status = document.getElementById('importStatus');
-      spin.style.display = 'inline-block';
-      const snap = await getDocs(collection(db, 'glitches'));
-      spin.style.display = 'none';
-      if (snap.size === 0) {
-        status.textContent = `Firestore vide (0 documents). Vous pouvez importer.`;
-        document.getElementById('btnImport').style.display = 'inline-flex';
-      } else {
-        status.textContent = `${snap.size} glitch(s) déjà dans Firestore.`;
-      }
-    });
-
-    document.getElementById('btnImport').addEventListener('click', async () => {
-      const spin = document.getElementById('spinImport');
-      const status = document.getElementById('importStatus');
-      spin.style.display = 'inline-block';
-      try {
-        const res = await fetch('glitches.json');
-        const data = await res.json();
-        for (const g of data) {
-          await addDoc(collection(db, 'glitches'), g);
-        }
-        spin.style.display = 'none';
-        status.textContent = `✓ ${data.length} glitchs importés avec succès.`;
-        document.getElementById('btnImport').style.display = 'none';
-        toast(`${data.length} glitchs importés !`);
-        loadGlitches();
-      } catch (e) {
-        spin.style.display = 'none';
-        status.textContent = `Erreur : ${e.message}`;
-        toast(e.message, 'err');
-      }
-    });
-
-    // ── FORM MODAL ──
-    const formOverlay = document.getElementById('formOverlay');
-    const closeForm = () => { formOverlay.classList.remove('open'); document.body.style.overflow = ''; };
-
-    document.getElementById('formClose').addEventListener('click', closeForm);
-    document.getElementById('formCancel').addEventListener('click', closeForm);
-    formOverlay.addEventListener('click', e => { if (e.target === formOverlay) closeForm(); });
-
-    function openForm(glitch = null) {
-      document.getElementById('formTitle').textContent = glitch ? 'Éditer le glitch' : 'Nouveau glitch';
-      document.getElementById('fDocId').value = glitch?.docId || '';
-      document.getElementById('fName').value = glitch?.name || '';
-      document.getElementById('fGame').value = glitch?.game || 'botw';
-      document.getElementById('fCategory').value = glitch?.category || '';
-      document.getElementById('fDifficulty').value = glitch?.difficulty || 'medium';
-      document.getElementById('fVersion').value = glitch?.version || '';
-      document.getElementById('fPatchStatus').value = glitch?.patchStatus || 'works';
-      document.getElementById('fSpeedrun').checked = glitch?.speedrunUse || false;
-      document.getElementById('fSummary').value = glitch?.summary || '';
-      document.getElementById('fExplanation').value = glitch?.explanation || '';
-      document.getElementById('fSteps').value = (glitch?.steps || []).join('\n');
-      document.getElementById('fTags').value = (glitch?.tags || []).join(', ');
-      document.getElementById('fWarning').value = glitch?.warning || '';
-      document.getElementById('fTip').value = glitch?.tip || '';
-      document.getElementById('fVideo').value = glitch?.video || '';
-      formOverlay.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-
-    document.getElementById('btnNew').addEventListener('click', () => openForm());
-
-    window.editGlitch = (docId) => {
-      const g = allGlitches.find(x => x.docId === docId);
-      if (g) openForm(g);
-    };
-
-    window.deleteGlitch = async (docId, name) => {
-      if (!confirm(`Supprimer « ${name} » ?`)) return;
-      try {
-        await deleteDoc(doc(db, 'glitches', docId));
-        toast(`« ${name} » supprimé.`);
-        loadGlitches();
-      } catch (e) {
-        toast(e.message, 'err');
-      }
-    };
-
-    document.getElementById('formSave').addEventListener('click', async () => {
-      const docId = document.getElementById('fDocId').value;
-      const name = document.getElementById('fName').value.trim();
-      if (!name) { toast('Le nom est requis.', 'err'); return; }
-
-      const data = {
-        id: allGlitches.length + 1,
-        name,
-        game: document.getElementById('fGame').value,
-        category: document.getElementById('fCategory').value.trim().toLowerCase(),
-        difficulty: document.getElementById('fDifficulty').value,
-        version: document.getElementById('fVersion').value.trim() || null,
-        patchStatus: document.getElementById('fPatchStatus').value,
-        speedrunUse: document.getElementById('fSpeedrun').checked,
-        summary: document.getElementById('fSummary').value.trim(),
-        explanation: document.getElementById('fExplanation').value.trim() || null,
-        steps: document.getElementById('fSteps').value.split('\n').map(s => s.trim()).filter(Boolean),
-        tags: document.getElementById('fTags').value.split(',').map(t => t.trim()).filter(Boolean),
-        warning: document.getElementById('fWarning').value.trim() || null,
-        tip: document.getElementById('fTip').value.trim() || null,
-        video: document.getElementById('fVideo').value.trim() || null,
-      };
-
-      try {
-        if (docId) {
-          // preserve original id
-          const orig = allGlitches.find(x => x.docId === docId);
-          data.id = orig?.id ?? data.id;
-          await setDoc(doc(db, 'glitches', docId), data);
-          toast('Glitch mis à jour !');
-        } else {
-          await addDoc(collection(db, 'glitches'), data);
-          toast('Glitch ajouté !');
-        }
-        closeForm();
-        loadGlitches();
-      } catch (e) {
-        toast(e.message, 'err');
-      }
-    });
-  </script>
+    closeForm();
+    loadGlitches();
+  } catch (e) {
+    toast(e.message, 'err');
+  }
+});
+</script>
 </body>
-
 </html>

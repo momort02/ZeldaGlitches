@@ -4,8 +4,8 @@
       <feGaussianBlur stdDeviation="6" result="blur"/>
       <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
-    <clipPath id="clip-top"><rect x="0" y="0" width="200" height="106"/></clipPath>
-    <clipPath id="clip-bot"><rect x="0" y="106" width="200" height="100"/></clipPath>
+    <clipPath id="clip-top"><rect x="0" y="0" width="200" height="90"/></clipPath>
+    <clipPath id="clip-bot"><rect x="0" y="90" width="200" height="110"/></clipPath>
     <linearGradient id="grad-gold" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#ffe080"/>
       <stop offset="60%" stop-color="#f0c040"/>
@@ -17,31 +17,32 @@
   <circle cx="100" cy="100" r="96" fill="none" stroke="#5ab4ff" stroke-width="1" opacity="0.2"/>
   <circle cx="100" cy="100" r="88" fill="none" stroke="#f0c040" stroke-width="0.5" opacity="0.12"/>
 
-  <polygon points="100,62 74,106 126,106" fill="url(#grad-gold)" filter="url(#glow-gold)"/>
-  
-  <polygon points="74,106 48,150 100,150" fill="url(#grad-gold)" filter="url(#glow-gold)"/>
-  
-  <polygon points="126,106 100,150 152,150" fill="url(#grad-gold)" filter="url(#glow-gold)"/>
+  <g id="triforce-group">
+    <polygon points="100,46 74,90 126,90" fill="url(#grad-gold)" filter="url(#glow-gold)"/>
+    <polygon points="74,90 48,134 100,134" fill="url(#grad-gold)" filter="url(#glow-gold)"/>
+    <polygon points="126,90 100,134 152,134" fill="url(#grad-gold)" filter="url(#glow-gold)"/>
+  </g>
 
   <g clip-path="url(#clip-top)" opacity="0.22">
-    <polygon points="100,62 74,106 126,106" fill="#00e5cc" transform="translate(4,0)"/>
+    <polygon points="100,46 74,90 126,90" fill="#00e5cc" transform="translate(4,0)"/>
   </g>
   <g clip-path="url(#clip-bot)" opacity="0.18">
-    <polygon points="74,106 48,150 100,150" fill="#5ab4ff" transform="translate(-3,0)"/>
+    <polygon points="74,90 48,134 100,134" fill="#5ab4ff" transform="translate(-3,0)"/>
   </g>
 
   <g fill="none" stroke="#ffe8a0" stroke-width="0.7" opacity="0.55">
-    <polygon points="100,62 74,106 126,106"/>
-    <polygon points="74,106 48,150 100,150"/>
-    <polygon points="126,106 100,150 152,150"/>
+    <polygon points="100,46 74,90 126,90"/>
+    <polygon points="74,90 48,134 100,134"/>
+    <polygon points="126,90 100,134 152,134"/>
   </g>
 
-  <rect x="58" y="124" width="34" height="2" fill="#00e5cc" opacity="0.45"/>
-  <rect x="109" y="88" width="20" height="1.5" fill="#5ab4ff" opacity="0.4"/>
+  <rect x="58" y="110" width="34" height="2" fill="#00e5cc" opacity="0.45"/>
+  <rect x="115" y="70" width="20" height="1.5" fill="#5ab4ff" opacity="0.4"/>
+  
   <g stroke="#5ab4ff" stroke-width="1.2" fill="none" opacity="0.45">
     <polyline points="16,28 16,16 28,16"/><polyline points="172,16 184,16 184,28"/>
     <polyline points="16,172 16,184 28,184"/><polyline points="172,184 184,184 184,172"/>
   </g>
 
-  <text x="100" y="178" text-anchor="middle" font-family="Georgia,serif" font-size="10" letter-spacing="7" fill="#5ab4ff" opacity="0.65">HGA</text>
+  <text x="100" y="175" text-anchor="middle" font-family="Georgia,serif" font-size="10" letter-spacing="7" fill="#5ab4ff" opacity="0.65">HGA</text>
 </svg>

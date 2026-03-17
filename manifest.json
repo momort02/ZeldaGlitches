@@ -1,0 +1,13 @@
+{
+  "name": "Hyrule Glitch Archive",
+  "short_name": "HGA",
+  "description": "Recueil complet des glitchs Zelda BotW & TotK",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050810",
+  "theme_color": "#050810",
+  "orientation": "portrait-primary",
+  "icons": [
+    { "src": "logo.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

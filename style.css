@@ -47,6 +47,14 @@ header {
   border-bottom: 1px solid var(--border);
   background: linear-gradient(to bottom, rgba(0,20,60,.8), transparent);
 }
+.header-logo {
+  width: 90px;
+  height: 90px;
+  margin-bottom: 14px;
+  filter: drop-shadow(0 0 16px rgba(240,192,64,0.5));
+  animation: pulse-gold 3s ease-in-out infinite;
+}
+
 .header-triforce {
   font-size: 44px; margin-bottom: 14px;
   filter: drop-shadow(0 0 16px var(--accent-gold));

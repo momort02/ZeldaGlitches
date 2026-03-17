@@ -144,6 +144,24 @@
 <!-- ADMIN PANEL -->
 <div id="adminSection">
 
+  <!-- Import JSON -->
+  <div class="import-box">
+    <h3>Import JSON → Firestore</h3>
+    <p>Sélectionne un fichier <code style="font-family:'Source Code Pro',monospace;font-size:.8rem;color:var(--blue)">glitches.json</code> local. Chaque entrée est ajoutée dans Firestore. Les entrées dont le champ <code style="font-family:'Source Code Pro',monospace;font-size:.8rem;color:var(--blue)">name</code> existe déjà sont ignorées.</p>
+    <div class="import-actions">
+      <label class="btn btn-ghost" style="cursor:pointer">
+        📂 Choisir un fichier JSON
+        <input type="file" id="jsonFileInput" accept=".json" style="display:none">
+      </label>
+      <button class="btn btn-primary" id="btnImport" disabled>
+        <span class="spinner" id="spinImport" style="display:none"></span>
+        Importer dans Firestore
+      </button>
+    </div>
+    <div id="importPreview" style="margin-top:10px;font-family:'Source Code Pro',monospace;font-size:.78rem;color:var(--dim)"></div>
+    <div id="importStatus"  style="margin-top:6px;font-family:'Source Code Pro',monospace;font-size:.78rem;color:var(--dim)"></div>
+  </div>
+
   <!-- Table -->
   <div class="toolbar">
     <div class="toolbar-title">Glitchs <span id="tableCount" style="color:var(--dim);font-weight:400"></span></div>
@@ -354,6 +372,61 @@ function renderTable() {
       </td>
     </tr>`).join('');
 }
+
+// ── IMPORT JSON ──
+let parsedImportData = [];
+
+document.getElementById('jsonFileInput').addEventListener('change', e => {
+  const file    = e.target.files[0];
+  const preview = document.getElementById('importPreview');
+  const btn     = document.getElementById('btnImport');
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = ev => {
+    try {
+      parsedImportData = JSON.parse(ev.target.result);
+      if (!Array.isArray(parsedImportData)) throw new Error('Le fichier doit être un tableau JSON.');
+      preview.textContent = `✓ ${parsedImportData.length} glitch(s) détectés dans "${file.name}". Cliquez sur Importer pour les envoyer.`;
+      preview.style.color = 'var(--green)';
+      btn.disabled = false;
+    } catch (err) {
+      preview.textContent = `✗ Fichier invalide : ${err.message}`;
+      preview.style.color = 'var(--red)';
+      parsedImportData = [];
+      btn.disabled = true;
+    }
+  };
+  reader.readAsText(file);
+});
+
+document.getElementById('btnImport').addEventListener('click', async () => {
+  if (!parsedImportData.length) return;
+  const spin   = document.getElementById('spinImport');
+  const status = document.getElementById('importStatus');
+  const btn    = document.getElementById('btnImport');
+  spin.style.display = 'inline-block';
+  btn.disabled = true;
+
+  // Récupérer les noms existants pour éviter les doublons
+  const snap          = await getDocs(collection(db, 'glitches'));
+  const existingNames = new Set(snap.docs.map(d => d.data().name?.toLowerCase()));
+
+  let added = 0, skipped = 0;
+  for (const g of parsedImportData) {
+    if (existingNames.has((g.name || '').toLowerCase())) { skipped++; continue; }
+    await addDoc(collection(db, 'glitches'), g);
+    added++;
+  }
+
+  spin.style.display = 'none';
+  status.textContent = `✓ ${added} ajouté(s)${skipped ? `, ${skipped} ignoré(s) (déjà présents)` : ''}.`;
+  status.style.color = 'var(--green)';
+  toast(`${added} glitch(s) importés !`);
+  parsedImportData = [];
+  document.getElementById('importPreview').textContent = '';
+  document.getElementById('jsonFileInput').value = '';
+  loadGlitches();
+});
 
 // ── FORM MODAL ──
 const formOverlay = document.getElementById('formOverlay');
